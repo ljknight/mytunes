@@ -7,10 +7,11 @@ var SongModel = Backbone.Model.extend({
   },
 
   enqueue: function() {
-    // this.get('url');
-    // this.get('title');
-    // this.get('artist');
-    this.clone();
+      // this.get('url');
+      // this.get('title');
+      // this.get('artist');
+
+    this.trigger('enqueue', this)
   },
 
   dequeue: function() {
