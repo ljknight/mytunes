@@ -8,6 +8,15 @@ var PlayerView = Backbone.View.extend({
   initialize: function() {
   },
 
+  events: {
+    'ended' : "removeFromQueue"
+  },
+
+  removeFromQueue: function() {
+    // this.model.trigger('play', this);
+    this.model.trigger('removeFromQueue', this);
+  },
+
   setSong: function(song) {
     this.model = song;
     this.render();
